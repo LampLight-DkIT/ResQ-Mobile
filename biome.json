@@ -1,0 +1,123 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "vcs": {
+    "enabled": false,
+    "clientKind": "git",
+    "useIgnoreFile": false
+  },
+  "files": {
+    "ignoreUnknown": false,
+    "ignore": ["node_modules", "app-example"]
+  },
+  "formatter": {
+    "enabled": true,
+    "useEditorconfig": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 4,
+    "lineEnding": "lf",
+    "lineWidth": 120,
+    "attributePosition": "auto",
+    "bracketSpacing": true
+  },
+  "organizeImports": {
+    "enabled": true
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": false,
+      "complexity": {
+        "all": true,
+        "noExtraBooleanCast": "warn",
+        "noMultipleSpacesInRegularExpressionLiterals": "warn",
+        "noUselessLoneBlockStatements": "warn",
+        "noVoid": "warn",
+        "noWith": "warn",
+        "useArrowFunction": "off",
+        "useLiteralKeys": "warn"
+      },
+      "correctness": {
+        "all": true,
+        "noConstAssign": "error",
+        "noConstantCondition": "off",
+        "noEmptyCharacterClassInRegex": "warn",
+        "noGlobalObjectCalls": "warn",
+        "noInnerDeclarations": "off",
+        "noInvalidUseBeforeDeclaration": "off",
+        "noUndeclaredVariables": "error",
+        "noUnreachable": "error",
+        "noUnusedVariables": "warn",
+        "useExhaustiveDependencies": "error",
+        "useHookAtTopLevel": "error",
+        "useIsNan": "warn"
+      },
+      "security": {
+        "all": true,
+        "noGlobalEval": "error"
+      },
+      "style": {
+        "all": true,
+        "noCommaOperator": "warn",
+        "noImplicitBoolean": "off",
+        "noUselessElse": "off",
+        "useBlockStatements": "warn",
+        "useCollapsedElseIf": "off",
+        "useSingleVarDeclarator": "off",
+        "noDefaultExport": "off"
+      },
+      "suspicious": {
+        "all": true,
+        "noAssignInExpressions": "warn",
+        "noCatchAssign": "warn",
+        "noCommentText": "error",
+        "noConfusingLabels": "warn",
+        "noConsoleLog": "off",
+        "noControlCharactersInRegex": "warn",
+        "noDebugger": "warn",
+        "noDoubleEquals": "warn",
+        "noDuplicateClassMembers": "error",
+        "noDuplicateJsxProps": "error",
+        "noDuplicateObjectKeys": "error",
+        "noEmptyBlockStatements": "off",
+        "noFallthroughSwitchClause": "warn",
+        "noFocusedTests": "warn",
+        "noFunctionAssign": "warn",
+        "noGlobalAssign": "error",
+        "noLabelVar": "warn",
+        "noRedeclare": "off",
+        "noSelfCompare": "warn",
+        "noShadowRestrictedNames": "warn",
+        "noSkippedTests": "warn",
+        "useValidTypeof": "warn"
+      }
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "enabled": true,
+      "jsxQuoteStyle": "single",
+      "quoteProperties": "asNeeded",
+      "trailingCommas": "none",
+      "semicolons": "asNeeded",
+      "arrowParentheses": "always",
+      "bracketSameLine": false,
+      "quoteStyle": "single"
+    },
+    "globals": ["__DEV__", "shared-node-browser", "Blob", "Set", "Promise", "File", "Map", "WebSocket"]
+  },
+  "json": {
+    "formatter": {
+      "enabled": true,
+      "indentWidth": 2
+    }
+  },
+  "overrides": [
+    {
+      "include": ["*.web.*"]
+    },
+    {
+      "include": ["*.web.*"]
+    }
+  ]
+}
