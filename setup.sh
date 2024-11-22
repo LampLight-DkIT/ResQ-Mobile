@@ -213,6 +213,14 @@ function _main() {
     if ! validate_steps "$steps"; then
         return $status
     fi
+    
+    # check if JAVA_HOME is set
+    if [[ -z "$JAVA_HOME" ]]; then
+        echo ""
+        echo -e "${ORANGE}Warning: JAVA_HOME is not set${NC}"
+        echo -e "${ORANGE}         The variable should point to the install location of JDK 17${NC}"
+        echo -e "${ORANGE}         Install with 'brew install openjdk@17'${NC}"
+    fi
 
     # Execute steps
     if ! execute_steps "$steps"; then
@@ -228,15 +236,6 @@ function _main() {
     echo -e "${GREEN}Setup completed successfully${NC}"
     echo -e "${GREEN}Please add the following to '~/.zshrc' or ~/.bashrc':${NC}"
     echo -e "${GREEN}$ENV_VARS${NC}"
-    
-
-    # check if JAVA_HOME is set
-    if [[ -z "$JAVA_HOME" ]]; then
-        echo ""
-        echo -e "${ORANGE}Warning: JAVA_HOME is not set${NC}"
-        echo -e "${ORANGE}         The variable should point to the install location of JDK 17${NC}"
-        echo -e "${ORANGE}         Install with 'brew install openjdk@17'${NC}"
-    fi
 
     return 0
 }
