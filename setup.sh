@@ -10,6 +10,7 @@ set -eo pipefail
 RED='\033[1;31m'
 GREEN='\033[1;32m'
 ORANGE='\033[0;33m'
+BLUE='\033[1;34m'
 NC='\033[0m'  # No Color
 
 ZIP=""
@@ -18,7 +19,7 @@ case "`uname`" in
         ZIP="commandlinetools-mac-11076708_latest.zip"
         ;;
     Linux* )
-        ZIP="commandlinetools-linux-7302050_latest.zip"
+        ZIP="commandlinetools-linux-11076708_latest.zip"
         ;;
     * )
         echo "Unsupported OS"
@@ -61,7 +62,7 @@ SDK_COMPONENTS=(
 
 # Step 1: Download and extract the cmdline-tools to /tmp
 function download_and_extract() {
-    echo -e "\nDownloading $ZIP..."
+    echo -e "${BLUE}\nSTEP 1: Downloading and extracting cmdline-tools...${NC}"
     rm -rf "/tmp/$ZIP" "/tmp/cmdline-tools"
     wget "$URL" -O "/tmp/$ZIP"
     unzip -q "/tmp/$ZIP" -d "/tmp"
@@ -70,7 +71,7 @@ function download_and_extract() {
 
 # Step 2: Install cmdline-tools to ANDROID_HOME
 function install_cmdline_tools() {
-    echo -e "\nInstalling SDK..."
+    echo -e "${BLUE}\nSTEP 2: Installing SDK...${NC}"
     eval "$ENV_VARS"
     
     rm -rf "$ANDROID_HOME/cmdline-tools"
@@ -81,7 +82,7 @@ function install_cmdline_tools() {
 
 # Step 3: Install SDK components
 function install_sdk_components() {
-    echo -e "Installing SDK components..."
+    echo -e "${BLUE}\nSTEP 3: Installing SDK components...${NC}"
     for component in "${SDK_COMPONENTS[@]}"; do
         echo -e "\nInstalling component: $component..."
         if yes | sdkmanager --sdk_root="$ANDROID_HOME" "$component"; then
