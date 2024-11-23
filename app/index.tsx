@@ -1,6 +1,7 @@
 import { Text, View } from 'react-native'
 
 export default function Index() {
+    console.log('hello world')
     return (
         <View
             style={{
@@ -10,6 +11,8 @@ export default function Index() {
             }}
         >
             <Text>Edit app/index.tsx to edit this screen.</Text>
+            <Text>Hello world</Text>
+            <Text>Hello world</Text>
         </View>
     )
 }

@@ -73,6 +73,7 @@
         "noCommentText": "error",
         "noConfusingLabels": "warn",
         "noConsoleLog": "off",
+        "noConsole": "off",
         "noControlCharactersInRegex": "warn",
         "noDebugger": "warn",
         "noDoubleEquals": "warn",
