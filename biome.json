@@ -48,7 +48,7 @@
         "noUndeclaredVariables": "error",
         "noUnreachable": "error",
         "noUnusedVariables": "warn",
-        "useExhaustiveDependencies": "error",
+        "useExhaustiveDependencies": "warn",
         "useHookAtTopLevel": "error",
         "useIsNan": "warn"
       },
@@ -64,7 +64,8 @@
         "useBlockStatements": "warn",
         "useCollapsedElseIf": "off",
         "useSingleVarDeclarator": "off",
-        "noDefaultExport": "off"
+        "noDefaultExport": "off",
+        "noNamespaceImport": "off"
       },
       "suspicious": {
         "all": true,
