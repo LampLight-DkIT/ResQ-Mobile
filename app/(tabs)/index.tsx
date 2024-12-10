@@ -92,25 +92,30 @@ export default function HomeScreen() {
 
     // @ts-ignore
     const renderChatItem = ({ item }) => (
-        <TouchableOpacity style={styles.chatItem}>
-            <Image source={{ uri: item.avatar }} style={styles.avatar} />
-            <View style={styles.chatInfo}>
-                <View style={styles.chatHeader}>
-                    <Text style={styles.chatName}>{item.name}</Text>
-                    <Text style={styles.timestamp}>{item.timestamp}</Text>
+        <Link href='/chat' asChild>
+            <TouchableOpacity style={styles.chatItem}>
+                <Image source={{ uri: item.avatar }} style={styles.avatar} />
+                <View style={styles.chatInfo}>
+                    <View style={styles.chatHeader}>
+                        <Text style={styles.chatName}>{item.name}</Text>
+                        <Text style={styles.timestamp}>{item.timestamp}</Text>
+                    </View>
+                    <View style={styles.chatPreview}>
+                        <Text
+                            style={[styles.lastMessage, item.unreadCount > 0 && styles.unreadMessage]}
+                            numberOfLines={1}
+                        >
+                            {item.lastMessage}
+                        </Text>
+                        {item.unreadCount > 0 && (
+                            <View style={styles.unreadBadge}>
+                                <Text style={styles.unreadText}>{item.unreadCount}</Text>
+                            </View>
+                        )}
+                    </View>
                 </View>
-                <View style={styles.chatPreview}>
-                    <Text style={[styles.lastMessage, item.unreadCount > 0 && styles.unreadMessage]} numberOfLines={1}>
-                        {item.lastMessage}
-                    </Text>
-                    {item.unreadCount > 0 && (
-                        <View style={styles.unreadBadge}>
-                            <Text style={styles.unreadText}>{item.unreadCount}</Text>
-                        </View>
-                    )}
-                </View>
-            </View>
-        </TouchableOpacity>
+            </TouchableOpacity>
+        </Link>
     )
 
     return (
@@ -148,27 +153,27 @@ export default function HomeScreen() {
             />
 
             {/* Bottom Navigation */}
-            <View style={styles.bottomNav}>
-                <Link
-                    // href='/auth/phone'
-                    // href='/auth/profile'
-                    href='/auth/emergency-contacts'
-                    asChild
-                >
-                    <Pressable style={styles.navItem}>
-                        <Ionicons name='chatbubbles' size={24} color='#007AFF' />
-                        <Text style={styles.navItemText}>Chats</Text>
-                    </Pressable>
-                </Link>
-                <TouchableOpacity style={styles.navItem}>
-                    <Ionicons name='list-outline' size={24} color='gray' />
-                    <Text style={styles.navItemText}>History</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.navItem}>
-                    <Ionicons name='settings' size={24} color='gray' />
-                    <Text style={styles.navItemText}>Settings</Text>
-                </TouchableOpacity>
-            </View>
+            {/* <View style={styles.bottomNav}> */}
+            {/*     <Link */}
+            {/*         // href='/auth/phone' */}
+            {/*         // href='/auth/profile' */}
+            {/*         // href='/auth/emergency-contacts' */}
+            {/*         href='/chat/new' */}
+            {/*     > */}
+            {/*         <Pressable style={styles.navItem}> */}
+            {/*             <Ionicons name='chatbubbles' size={24} color='#007AFF' /> */}
+            {/*             <Text style={styles.navItemText}>Chats</Text> */}
+            {/*         </Pressable> */}
+            {/*     </Link> */}
+            {/*     <TouchableOpacity style={styles.navItem}> */}
+            {/*         <Ionicons name='list-outline' size={24} color='gray' /> */}
+            {/*         <Text style={styles.navItemText}>History</Text> */}
+            {/*     </TouchableOpacity> */}
+            {/*     <TouchableOpacity style={styles.navItem}> */}
+            {/*         <Ionicons name='settings' size={24} color='gray' /> */}
+            {/*         <Text style={styles.navItemText}>Settings</Text> */}
+            {/*     </TouchableOpacity> */}
+            {/* </View> */}
         </View>
     )
 }

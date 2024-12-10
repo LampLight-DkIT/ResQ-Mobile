@@ -7,7 +7,7 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "ignore": ["node_modules", "app-example"]
+    "ignore": ["node_modules", "app-example", "android", ".expo"]
   },
   "formatter": {
     "enabled": true,
@@ -35,7 +35,8 @@
         "noVoid": "warn",
         "noWith": "warn",
         "useArrowFunction": "off",
-        "useLiteralKeys": "warn"
+        "useLiteralKeys": "warn",
+        "noUselessFragments": "off"
       },
       "correctness": {
         "all": true,
@@ -82,6 +83,7 @@
         "noDuplicateJsxProps": "error",
         "noDuplicateObjectKeys": "error",
         "noEmptyBlockStatements": "off",
+        "noExplicitAny": "off",
         "noFallthroughSwitchClause": "warn",
         "noFocusedTests": "warn",
         "noFunctionAssign": "warn",
