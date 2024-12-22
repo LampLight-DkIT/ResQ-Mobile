@@ -19,7 +19,7 @@ $ZIP = switch ($IsWindows) {
 }
 $URL = "https://dl.google.com/android/repository/$ZIP"
 
-$ANDROID_HOME = "$env:USERPROFILE\android-sdk"
+$ANDROID_HOME = "$env:USERPROFILE\.android-sdk"
 $NDK_VERSION = "27.1.12297006"
 $NDK_HOME = "$ANDROID_HOME\ndk\$NDK_VERSION"
 
